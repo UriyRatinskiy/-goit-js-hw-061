@@ -7,16 +7,21 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const ulList = document.querySelector("#ingredients");
- const list = document.createElement("li");
-//  console.log(list);
-const markup = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
-  // console.log(markup);
+const listEl = document.querySelector("#ingredients");
 
-ulList.innerHTML = markup;
+const createItems = function (array) {
+  return array.map((ingredient) => {
+    const itemEl = document.createElement('li');
+    itemEl.textContent = ingredient;
+    itemEl.classList.add('item');
 
-console.log(ulList);
+    return itemEl;
+  });
+};
+
+const itemsEl = createItems(ingredients);
+
+listEl.append(...itemsEl);
+
 
 

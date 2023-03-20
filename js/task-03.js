@@ -18,7 +18,7 @@ const list = document.querySelector(".gallery");
 const markup = images
   .map((image) => `<li ><img class="gallery_image" src="${image.url}" alt="${image.alt}"></li>`) 
   .join("");
-  // gallery__image.style.width = "24px";
+
 list.insertAdjacentHTML("afterbegin", markup);
 console.log(list);
 
